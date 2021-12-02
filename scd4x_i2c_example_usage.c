@@ -64,7 +64,7 @@ int main(void) {
 
     //Add headers to CSV file. (Make sure a CSV file is not already present as the header will be added to the exisitg CSV otherwise)
     FILE *fs;
-    fs = fopen("CO2output.csv", "a");
+    fs = fopen("../Outputs/CO2output.csv", "a");
     fprintf(fs,"Timestamp, CO2, Temperature, Humidity\n");
     fclose(fs);
 
@@ -103,7 +103,7 @@ int main(void) {
             printf("CO2: %u ppm\n", co2);
             printf("Temperature: %.2f °C\n", temperature);
             printf("Humidity: %.2f RH\n", humidity);
-            fs = fopen("CO2output.csv", "a");
+            fs = fopen("../Outputs/CO2output.csv", "a");
             fprintf(fs,"%s, %u, %0.2f, %0.2f\n", measurementTime, co2, temperature, humidity);
             fclose(fs);
         }
