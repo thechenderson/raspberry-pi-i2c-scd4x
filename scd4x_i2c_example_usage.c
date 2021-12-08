@@ -100,9 +100,8 @@ int main(void) {
         } else if (co2 == 0) {
             printf("Invalid sample detected, skipping.\n");
         } else {
-            printf("CO2: %u ppm\n", co2);
-            printf("Temperature: %.2f °C\n", temperature);
-            printf("Humidity: %.2f RH\n", humidity);
+            printf("SCD40 MEASUREMENT TAKEN - %s\n", measurementTime);
+            printf("********************************\n");
             fs = fopen("../Outputs/CO2output.csv", "a");
             fprintf(fs,"%s, %u, %0.2f, %0.2f\n", measurementTime, co2, temperature, humidity);
             fclose(fs);
